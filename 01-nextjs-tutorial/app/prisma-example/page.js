@@ -17,6 +17,10 @@ const prismaHandlers = async () => {
 const PrismaExamplePage = async () => {
     const tasks = await prismaHandlers()
 
+    if (tasks.length === 0) {
+        return <h2 className="mt-8 font-medium text-lg">No tasks to show...</h2>
+    }
+
     return (
         <div>
             <h1 className="text-7xl">PrismaExamplePage</h1>
